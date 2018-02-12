@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Klt-PQ-bJH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--The New York Times-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poweredby_nytimes_200a" translatesAutoresizingMaskIntoConstraints="NO" id="dZo-HK-dug">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nay-Jb-diy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="351" id="tiN-ko-kt2" customClass="NewsTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="351"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tiN-ko-kt2" id="k9V-L6-ogE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="350.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F7H-yh-jxS">
+                                                    <rect key="frame" x="8" y="8" width="359" height="305.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="305.5" id="KDN-vV-Toh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z4-le-kKV">
+                                                    <rect key="frame" x="8" y="321.5" width="359" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="F7H-yh-jxS" secondAttribute="trailing" constant="8" id="5zU-p5-pZs"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Z4-le-kKV" secondAttribute="bottom" constant="8.5" id="FHI-f0-Z30"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Z4-le-kKV" secondAttribute="trailing" constant="8" id="Jac-bj-apr"/>
+                                                <constraint firstItem="2Z4-le-kKV" firstAttribute="top" secondItem="F7H-yh-jxS" secondAttribute="bottom" constant="8" id="ai7-1y-9F6"/>
+                                                <constraint firstItem="F7H-yh-jxS" firstAttribute="top" secondItem="k9V-L6-ogE" secondAttribute="top" constant="8" id="lBW-KY-agd"/>
+                                                <constraint firstItem="F7H-yh-jxS" firstAttribute="leading" secondItem="k9V-L6-ogE" secondAttribute="leading" constant="8" id="rUM-4k-waP"/>
+                                                <constraint firstItem="2Z4-le-kKV" firstAttribute="leading" secondItem="k9V-L6-ogE" secondAttribute="leading" constant="8" id="tcO-l9-C5W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="2Z4-le-kKV" id="WPi-6n-7SK"/>
+                                            <outlet property="thumbnailImage" destination="F7H-yh-jxS" id="K8Z-rj-b8f"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3cb-Te-Win"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mMX-d2-NcI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dZo-HK-dug" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Nf-Wz-BgX"/>
+                            <constraint firstItem="Nay-Jb-diy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ICd-qN-a6x"/>
+                            <constraint firstItem="Nay-Jb-diy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IVg-nc-m6J"/>
+                            <constraint firstItem="dZo-HK-dug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TIF-V2-2eQ"/>
+                            <constraint firstItem="Nay-Jb-diy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hE6-Id-b7R"/>
+                            <constraint firstItem="dZo-HK-dug" firstAttribute="top" secondItem="Nay-Jb-diy" secondAttribute="bottom" id="oux-Pu-0NM"/>
+                            <constraint firstItem="dZo-HK-dug" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uX3-u7-EUG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="The New York Times" id="gLB-sp-9hN"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="Nay-Jb-diy" id="X2b-5s-KFK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="by5-iy-kun">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Klt-PQ-bJH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yJT-km-pQv">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Eoo-sO-Lvl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BiE-Yn-1CL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-180" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="poweredby_nytimes_200a" width="200" height="40"/>
+    </resources>
+</document>
